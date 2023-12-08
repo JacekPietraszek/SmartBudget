@@ -3,6 +3,7 @@ package com.smartbudget.smartbudget.transaction;
 import java.time.LocalDateTime;
 
 public class TransactionDto {
+    private Long id;
     private String TypeOfTransaction;
     private String category;
     private Double amount;
@@ -12,6 +13,14 @@ public class TransactionDto {
 
     public String getTypeOfTransaction() {
         return TypeOfTransaction;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public void setTypeOfTransaction(String typeOfTransaction) {

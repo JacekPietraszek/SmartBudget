@@ -3,6 +3,7 @@ package com.smartbudget.smartbudget.transaction;
 
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
 import java.util.Optional;
 
 @Service
@@ -19,5 +20,15 @@ public class TransactionService {
         return transactionRepository.findById(id).map(transactionDtoMapper::map);
     }
 
+    TransactionDto saveTransaction (TransactionDto transactionDto) {
+        Transaction transactionToSave = transactionDtoMapper.map(transactionDto);
+        transactionToSave.setDateAdded(LocalDateTime.now());
+        Transaction savedTransaction = transactionRepository.save(transactionToSave);
+        return transactionDtoMapper.map(savedTransaction);
+    }
 
+    void updateTransaction (TransactionDto transactionDto) {
+        Transaction transaction = transactionDtoMapper.map(transactionDto);
+        transactionRepository.save(transaction);
+    }
 }

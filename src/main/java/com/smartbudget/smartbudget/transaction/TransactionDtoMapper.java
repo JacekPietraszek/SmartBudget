@@ -15,4 +15,15 @@ public class TransactionDtoMapper {
         dto.setComments(transaction.getComments());
         return dto;
     }
+
+    Transaction map(TransactionDto dto) {
+        Transaction transaction = new Transaction();
+        transaction.setId(dto.getId());
+        transaction.setAccount(dto.getAccount());
+        transaction.setAmount(dto.getAmount());
+        transaction.setCategory(dto.getCategory());
+        transaction.setDateAdded(dto.getDateAdded());
+        transaction.setTypeOfTransaction(dto.getTypeOfTransaction());
+        return transaction;
+    }
 }
