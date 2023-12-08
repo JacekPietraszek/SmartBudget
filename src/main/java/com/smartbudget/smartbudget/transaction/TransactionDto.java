@@ -1,4 +1,4 @@
-package com.smartbudget.smartbudget;
+package com.smartbudget.smartbudget.transaction;
 
 import java.time.LocalDateTime;
 
