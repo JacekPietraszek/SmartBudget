@@ -7,6 +7,7 @@ public class TransactionDtoMapper {
 
     TransactionDto map(Transaction transaction) {
         TransactionDto dto = new TransactionDto();
+        dto.setId(transaction.getId());
         dto.setTypeOfTransaction(transaction.getTypeOfTransaction());
         dto.setCategory(transaction.getCategory());
         dto.setAmount(transaction.getAmount());
@@ -24,6 +25,7 @@ public class TransactionDtoMapper {
         transaction.setCategory(dto.getCategory());
         transaction.setDateAdded(dto.getDateAdded());
         transaction.setTypeOfTransaction(dto.getTypeOfTransaction());
+        transaction.setComments(dto.getComments());
         return transaction;
     }
 }

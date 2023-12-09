@@ -9,14 +9,19 @@ import java.time.LocalDateTime;
 public class Transaction {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column
     private Long id;
     @Column(name = "type_of_transaction")
     private String TypeOfTransaction;
+    @Column
     private String category;
+    @Column
     private Double amount;
+    @Column
     private String account;
     @Column(name = "date_added")
     private LocalDateTime dateAdded;
+    @Column
     private String comments;
 
     public Long getId() {
