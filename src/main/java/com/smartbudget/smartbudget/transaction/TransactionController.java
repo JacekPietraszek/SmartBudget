@@ -60,6 +60,4 @@ public class TransactionController {
         JsonNode transactionPatchedNote = patch.apply(transactionNode);
         return objectMapper.treeToValue(transactionPatchedNote, TransactionDto.class);
     }
-
-
 }

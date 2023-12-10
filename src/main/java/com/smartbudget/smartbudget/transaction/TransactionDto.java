@@ -6,9 +6,9 @@ public class TransactionDto {
     private Long id;
     private String TypeOfTransaction;
     private String category;
-    private Double amount;
+    private Double value;
     private String account;
-    private LocalDateTime dateAdded;
+    private String dateAdded;
     private String comments;
 
     public String getTypeOfTransaction() {
@@ -35,12 +35,12 @@ public class TransactionDto {
         this.category = category;
     }
 
-    public Double getAmount() {
-        return amount;
+    public Double getValue() {
+        return value;
     }
 
-    public void setAmount(Double amount) {
-        this.amount = amount;
+    public void setValue(Double value) {
+        this.value = value;
     }
 
     public String getAccount() {
@@ -51,11 +51,11 @@ public class TransactionDto {
         this.account = account;
     }
 
-    public LocalDateTime getDateAdded() {
+    public String getDateAdded() {
         return dateAdded;
     }
 
-    public void setDateAdded(LocalDateTime dateAdded) {
+    public void setDateAdded(String dateAdded) {
         this.dateAdded = dateAdded;
     }
 

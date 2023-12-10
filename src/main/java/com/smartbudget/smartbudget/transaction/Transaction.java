@@ -12,15 +12,15 @@ public class Transaction {
     @Column
     private Long id;
     @Column(name = "type_of_transaction")
-    private String TypeOfTransaction;
+    private String typeOfTransaction;
     @Column
     private String category;
-    @Column
-    private Double amount;
+    @Column(name= "value_transaction")
+    private Double value;
     @Column
     private String account;
     @Column(name = "date_added")
-    private LocalDateTime dateAdded;
+    private String dateAdded;
     @Column
     private String comments;
 
@@ -33,11 +33,11 @@ public class Transaction {
     }
 
     public String getTypeOfTransaction() {
-        return TypeOfTransaction;
+        return typeOfTransaction;
     }
 
     public void setTypeOfTransaction(String typeOfTransaction) {
-        TypeOfTransaction = typeOfTransaction;
+        this.typeOfTransaction = typeOfTransaction;
     }
 
     public String getCategory() {
@@ -48,12 +48,12 @@ public class Transaction {
         this.category = category;
     }
 
-    public Double getAmount() {
-        return amount;
+    public Double getValue() {
+        return value;
     }
 
-    public void setAmount(Double amount) {
-        this.amount = amount;
+    public void setValue(Double value) {
+        this.value = value;
     }
 
     public String getAccount() {
@@ -64,11 +64,11 @@ public class Transaction {
         this.account = account;
     }
 
-    public LocalDateTime getDateAdded() {
+    public String getDateAdded() {
         return dateAdded;
     }
 
-    public void setDateAdded(LocalDateTime dateAdded) {
+    public void setDateAdded(String dateAdded) {
         this.dateAdded = dateAdded;
     }
 
@@ -78,5 +78,18 @@ public class Transaction {
 
     public void setComments(String comments) {
         this.comments = comments;
+    }
+
+    @Override
+    public String toString() {
+        return "Transaction{" +
+                "id=" + id +
+                ", typeOfTransaction='" + typeOfTransaction + '\'' +
+                ", category='" + category + '\'' +
+                ", value=" + value +
+                ", account='" + account + '\'' +
+                ", dateAdded=" + dateAdded +
+                ", comments='" + comments + '\'' +
+                '}';
     }
 }

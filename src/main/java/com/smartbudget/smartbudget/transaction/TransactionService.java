@@ -22,7 +22,6 @@ public class TransactionService {
 
     TransactionDto saveTransaction (TransactionDto transactionDto) {
         Transaction transactionToSave = transactionDtoMapper.map(transactionDto);
-        transactionToSave.setDateAdded(LocalDateTime.now());
         Transaction savedTransaction = transactionRepository.save(transactionToSave);
         return transactionDtoMapper.map(savedTransaction);
     }
