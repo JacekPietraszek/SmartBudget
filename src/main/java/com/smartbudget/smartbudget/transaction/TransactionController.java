@@ -1,13 +1,12 @@
 package com.smartbudget.smartbudget.transaction;
 
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
 
-@Controller
+
+@RestController
 public class TransactionController {
-
 
     private final TransactionService transactionService;
 
@@ -15,15 +14,9 @@ public class TransactionController {
         this.transactionService = transactionService;
     }
 
-    @GetMapping("/")
-    public String index() {
-        return "index";
-    }
-
     @PostMapping("/addTransaction")
-    public String addTransaction(TransactionDto transactionDto, Model model) {
+    public String addTransaction(@RequestBody TransactionDto transactionDto) {
         TransactionDto savedTransaction = transactionService.saveTransaction(transactionDto);
-        model.addAttribute("transactionDto", savedTransaction);
-        return "newtransaction";
+        return "Obiekt dodano do bazy danych";
     }
 }
