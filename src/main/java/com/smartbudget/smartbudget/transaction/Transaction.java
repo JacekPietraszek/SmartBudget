@@ -2,7 +2,6 @@ package com.smartbudget.smartbudget.transaction;
 
 import jakarta.persistence.*;
 
-import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "transactions")

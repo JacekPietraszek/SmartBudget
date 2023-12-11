@@ -1,6 +1,5 @@
 package com.smartbudget.smartbudget.transaction;
 
-import java.time.LocalDateTime;
 
 public class TransactionDto {
     private Long id;
