@@ -17,6 +17,6 @@ public class TransactionController {
     @PostMapping("/addTransaction")
     public String addTransaction(@RequestBody TransactionDto transactionDto) {
         TransactionDto savedTransaction = transactionService.saveTransaction(transactionDto);
-        return "Obiekt dodano do bazy danych";
+        return "Object added to database.";
     }
 }
