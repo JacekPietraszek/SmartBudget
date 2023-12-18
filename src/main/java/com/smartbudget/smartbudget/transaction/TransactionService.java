@@ -2,7 +2,9 @@ package com.smartbudget.smartbudget.transaction;
 
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 
 @Service
@@ -25,5 +27,9 @@ public class TransactionService {
         Optional<Transaction> optionalTransaction = transactionRepository.findById(id);
         Transaction getTransaction = optionalTransaction.get();
         return transactionDtoMapper.map(getTransaction);
+    }
+
+    public List<Transaction> getAllTransactions() {
+        return (List<Transaction>) transactionRepository.findAll();
     }
 }

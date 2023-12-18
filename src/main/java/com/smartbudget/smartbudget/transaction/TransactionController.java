@@ -3,6 +3,8 @@ package com.smartbudget.smartbudget.transaction;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 
 @RestController
 public class TransactionController {
@@ -23,5 +25,11 @@ public class TransactionController {
     public ResponseEntity<TransactionDto> getTransactionById(@PathVariable Long id) {
         TransactionDto transactionDto = transactionService.getTransactionById(id);
         return ResponseEntity.ok(transactionDto);
+    }
+
+    @GetMapping("/transactions")
+    public ResponseEntity<List<Transaction>> getAllTransanctions() {
+        List<Transaction> transaction = transactionService.getAllTransactions();
+        return ResponseEntity.ok(transaction);
     }
 }
