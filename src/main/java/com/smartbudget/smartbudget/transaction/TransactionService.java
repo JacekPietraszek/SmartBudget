@@ -29,7 +29,10 @@ public class TransactionService {
         return transactionDtoMapper.map(getTransaction);
     }
 
-    public List<Transaction> getAllTransactions() {
-        return (List<Transaction>) transactionRepository.findAll();
+    public List<TransactionDto> getAllTransactions() {
+        List<Transaction> allTransactions = transactionRepository.findAll();
+        return allTransactions.stream()
+                .map(transactionDtoMapper::map)
+                .collect(Collectors.toList());
     }
 }

@@ -28,8 +28,8 @@ public class TransactionController {
     }
 
     @GetMapping("/transactions")
-    public ResponseEntity<List<Transaction>> getAllTransanctions() {
-        List<Transaction> transaction = transactionService.getAllTransactions();
+    public ResponseEntity<List<TransactionDto>> getAllTransanctions() {
+        List<TransactionDto> transaction = transactionService.getAllTransactions();
         return ResponseEntity.ok(transaction);
     }
 }
