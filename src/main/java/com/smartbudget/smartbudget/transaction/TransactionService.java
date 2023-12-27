@@ -35,4 +35,10 @@ public class TransactionService {
                 .map(transactionDtoMapper::map)
                 .collect(Collectors.toList());
     }
+
+    // sum all transaction (income) by day, week, month, year
+    // sum all transaction (expense) by day, week, month, year
+
+
+
 }
