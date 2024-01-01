@@ -1,5 +1,5 @@
 function fetchAndDisplayTransactions() {
-    fetch('http://localhost:8080/transactions') // Upewnij się, że adres URL jest poprawny
+    fetch('http://localhost:8080/transactions')
         .then(response => response.json())
         .then(transactions => {
             const table = document.getElementById('transactionsTable');
@@ -17,5 +17,4 @@ function fetchAndDisplayTransactions() {
         .catch(error => console.error('Error:', error));
 }
 
-// Wywołaj funkcję po załadowaniu strony
 document.addEventListener('DOMContentLoaded', fetchAndDisplayTransactions);

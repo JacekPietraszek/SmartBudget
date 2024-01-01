@@ -1,8 +1,16 @@
 table, th, td {
-    border: 1px solid black;
+    border: 2px solid black;
     border-collapse: collapse;
 }
 th, td {
     padding: 5px;
     text-align: left;
 }
+.banner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+.banner img {
+    max-width: 100%;
+}}
