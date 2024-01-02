@@ -32,4 +32,6 @@ public class TransactionController {
         List<TransactionDto> transaction = transactionService.getAllTransactions();
         return ResponseEntity.ok(transaction);
     }
+
+    // searchingByCategory
 }
