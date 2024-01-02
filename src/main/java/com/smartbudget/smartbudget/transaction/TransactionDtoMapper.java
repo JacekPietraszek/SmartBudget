@@ -5,7 +5,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class TransactionDtoMapper {
 
-    TransactionDto map(Transaction transaction) {
+    TransactionDto toDto(Transaction transaction) {
         TransactionDto dto = new TransactionDto();
         dto.setId(transaction.getId());
         dto.setTypeOfTransaction(transaction.getTypeOfTransaction());
@@ -17,7 +17,7 @@ public class TransactionDtoMapper {
         return dto;
     }
 
-    Transaction map(TransactionDto dto) {
+    Transaction toEntity(TransactionDto dto) {
         Transaction transaction = new Transaction();
         transaction.setId(dto.getId());
         transaction.setAccount(dto.getAccount());

@@ -28,10 +28,11 @@ public class TransactionController {
     }
 
     @GetMapping("/transactions")
-    public ResponseEntity<List<TransactionDto>> getAllTransanctions() {
-        List<TransactionDto> transaction = transactionService.getAllTransactions();
-        return ResponseEntity.ok(transaction);
+    List<TransactionDto> findAll(@RequestParam(required = false) String category) {
+        if (category != null) {
+            return transactionService.findAllByCategory(category);
+        } else {
+            return transactionService.getAllTransactions();
+        }
     }
-
-    // searchingByCategory
 }

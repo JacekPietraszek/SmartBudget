@@ -18,27 +18,33 @@ public class TransactionService {
     }
 
     public TransactionDto saveTransaction(TransactionDto transactionDto) {
-        Transaction transactionToSave = transactionDtoMapper.map(transactionDto);
+        Transaction transactionToSave = transactionDtoMapper.toEntity(transactionDto);
         Transaction savedTransaction = transactionRepository.save(transactionToSave);
-        return transactionDtoMapper.map(savedTransaction);
+        return transactionDtoMapper.toDto(savedTransaction);
     }
 
     public TransactionDto getTransactionById(Long id) {
         Optional<Transaction> optionalTransaction = transactionRepository.findById(id);
         Transaction getTransaction = optionalTransaction.get();
-        return transactionDtoMapper.map(getTransaction);
+        return transactionDtoMapper.toDto(getTransaction);
     }
 
     public List<TransactionDto> getAllTransactions() {
         List<Transaction> allTransactions = transactionRepository.findAll();
         return allTransactions.stream()
-                .map(transactionDtoMapper::map)
+                .map(transactionDtoMapper::toDto)
+                .collect(Collectors.toList());
+    }
+
+    public List<TransactionDto> findAllByCategory(String category) {
+        return transactionRepository.findAllByCategoryContainingIgnoreCase(category)
+                .stream()
+                .map(transactionDtoMapper::toDto)
                 .collect(Collectors.toList());
     }
 
     // sum all transaction (income) by day, week, month, year
     // sum all transaction (expense) by day, week, month, year
-
 
 
 }
