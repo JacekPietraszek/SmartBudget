@@ -10,8 +10,10 @@
     <img src="images/banner.png" alt="banner SmartBudget">
 </div>
 <p> </p>
-<input placeholder="Kategoria transakcji">
-<button>Szukaj</button>
+<div class="container">
+    <input type="text" class="searchTransaction" id="searchInput" placeholder="Kategoria transakcji">
+    <button class="btn btn-primary mx-1" onclick="searchTransactions()">Szukaj</button>
+</div>
 <table id="transactionsTable">
     <tr>
         <th>ID</th>
