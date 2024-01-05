@@ -46,5 +46,9 @@ public class TransactionService {
     // sum all transaction (income) by day, week, month, year
     // sum all transaction (expense) by day, week, month, year
     // findBy typeOfTransaction
+    //frontend poprawić
+
+
+
 
 }
