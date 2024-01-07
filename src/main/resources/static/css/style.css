@@ -24,3 +24,63 @@ th, td {
     align-items: center;
     justify-content: center;
 }
+
+.form-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.6);
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+.form-container label {
+    display: block;
+    margin-bottom: 8px;
+}
+
+.form-container input,
+.form-container select {
+    display: block;
+    margin-bottom: 12px;
+}
+
+.add-transaction-btn {
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    border: none;
+    border-radius: 50%;
+    background-color: green;
+    color: white;
+    font-size: 24px;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    outline: none;
+}
+
+.add-transaction-btn:hover {
+    background-color: darkgreen;
+}
+
+.subtract-transaction-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    border: none;
+    border-radius: 50%;
+    background-color: red;
+    color: white;
+    font-size: 24px;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    outline: none;
+}
+
+.subtract-transaction-btn:hover {
+    background-color: darkred;
+}
+
+
+

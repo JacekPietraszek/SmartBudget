@@ -57,4 +57,33 @@ function clearTableRows() {
     }
 }
 
+function openAddTransactionForm() {
+    window.location.href = '/addTransaction.html';
+}
+
+function addTransaction() {
+    const form = document.getElementById('addTransactionForm');
+    const formData = new FormData(form);
+
+    const transactionData = {};
+    formData.forEach((value, key) => {
+        transactionData[key] = value;
+    });
+
+    fetch('http://localhost:8080/addTransaction', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(transactionData),
+    })
+        .then(response => response.json())
+        .then(responseData => {
+            fetchAndDisplayTransactions();
+            form.reset();
+            form.style.display = 'none';
+        })
+        .catch(error => console.error('Error:', error));
+}
+
 document.addEventListener('DOMContentLoaded', fetchAndDisplayTransactions);
