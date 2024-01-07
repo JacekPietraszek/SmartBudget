@@ -15,7 +15,20 @@
 <div class="form-container">
     <form id="addTransactionForm">
         <label for="category">Kategoria:</label>
-        <input type="text" id="category" name="category" required>
+        <select id="category" name="category" required>
+            <option value="" disabled selected>Wybierz kategorię</option>
+            <option value="zakupy spozywcze">Zakupy spożywcze</option>
+            <option value="jedzenie na miescie">Jedzenie na mieście</option>
+            <option value="ubrania">Ubrania</option>
+            <option value="higiena osobista i artykuły">Higiena osobista i artykuły</option>
+            <option value="do oddania">Do oddania</option>
+            <option value="mieszkanie">Mieszkanie</option>
+            <option value="rozrywka">Rozrywka</option>
+            <option value="wypłata">Wypłata</option>
+            <option value="dochod dodatkowy">Dochód dodatkowy</option>
+            <option value="transport">Transport</option>
+            <option value="inne">Inne</option>
+        </select>
 
         <label for="value">Wartość:</label>
         <input type="number" id="value" name="value" required>

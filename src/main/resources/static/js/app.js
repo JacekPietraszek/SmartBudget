@@ -85,5 +85,34 @@ function addTransaction() {
         })
         .catch(error => console.error('Error:', error));
 }
+let currentMonth = new Date().getMonth();
+let currentYear = new Date().getFullYear();
+
+function updateMonthYear() {
+    const monthYearElement = document.getElementById('monthYear');
+    const months = [
+        "Styczeń", "Luty", "Marzec", "Kwiecień", "Maj", "Czerwiec",
+        "Lipiec", "Sierpień", "Wrzesień", "Październik", "Listopad", "Grudzień"
+    ];
+    monthYearElement.textContent = months[currentMonth] + ' ' + currentYear;
+}
+
+function previousMonth() {
+    currentMonth--;
+    if (currentMonth < 0) {
+        currentMonth = 11;
+        currentYear--;
+    }
+    updateMonthYear();
+}
+
+function nextMonth() {
+    currentMonth++;
+    if (currentMonth > 11) {
+        currentMonth = 0;
+        currentYear++;
+    }
+    updateMonthYear();
+}
 
 document.addEventListener('DOMContentLoaded', fetchAndDisplayTransactions);
