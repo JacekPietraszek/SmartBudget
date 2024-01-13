@@ -1,28 +1,57 @@
+
+body {
+    background-color: #f2f2f2;
+}
+
+
 table, th, td {
-    border: 2px solid black;
+    border: 2px solid #b3b3b3;
     border-collapse: collapse;
     margin: 0 auto;
 }
 
 th, td {
-    padding: 5px;
-    text-align: left;
+    padding: 10px;
 }
+
 
 .banner {
     display: flex;
     justify-content: center;
     align-items: center;
+}
 
-    .banner img {
-        max-width: 100%;
-    }
+.banner img {
+    max-width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .container {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+    background-color: #ffffff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+
+.btn-primary {
+    background-color: #66b3ff;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #3385ff;
 }
 
 .form-container {
@@ -33,15 +62,48 @@ th, td {
     border-radius: 8px;
     margin-bottom: 20px;
 }
+
 .form-container label {
     display: block;
     margin-bottom: 8px;
+    text-align: left;
 }
 
 .form-container input,
 .form-container select {
     display: block;
     margin-bottom: 12px;
+    width: 100%;
+}
+
+.form-container p {
+    margin-bottom: 10px;
+}
+
+
+
+.month-navigation {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+    border: 1px solid #b3b3b3;
+    padding: 10px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.month-navigation button {
+    font-size: 20px;
+    background: #ffffff;
+    border: none;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.month-navigation button:hover {
+    color: #4d4dff;
 }
 
 .add-transaction-btn {
@@ -85,9 +147,9 @@ th, td {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-top: 20px; /* Dodaj margines, jeśli potrzebujesz odstępu od innych elementów */
-    border: 1px solid #ccc; /* Dodaj ramkę o grubości 1 piksela i kolorze #ccc */
-    padding: 10px; /* Dodaj wewnętrzny odstęp dla ramki */
+    margin-top: 20px;
+    border: 1px solid #ccc;
+    padding: 10px;
 }
 
 .month-navigation button {
@@ -95,11 +157,11 @@ th, td {
     background: none;
     border: none;
     cursor: pointer;
-    margin: 0; /* Usuń margines dla strzałek */
+    margin: 0;
 }
 
 .month-navigation h2 {
-    margin: 0; /* Usuń domyślny margines dla h2 */
+    margin: 0;
 }
 
 
