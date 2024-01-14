@@ -2,6 +2,8 @@ package com.smartbudget.smartbudget.transaction;
 
 import jakarta.persistence.*;
 
+import java.util.Date;
+
 
 @Entity
 @Table(name = "transactions")
@@ -19,7 +21,8 @@ public class Transaction {
     @Column
     private String account;
     @Column(name = "date_added")
-    private String dateAdded;
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date dateAdded;
     @Column
     private String comments;
 
@@ -63,11 +66,11 @@ public class Transaction {
         this.account = account;
     }
 
-    public String getDateAdded() {
+    public Date getDateAdded() {
         return dateAdded;
     }
 
-    public void setDateAdded(String dateAdded) {
+    public void setDateAdded(Date dateAdded) {
         this.dateAdded = dateAdded;
     }
 

@@ -10,7 +10,7 @@ function fetchAndDisplayTransactions() {
                 row.insertCell(2).textContent = transaction.category;
                 row.insertCell(3).textContent = transaction.value;
                 row.insertCell(4).textContent = transaction.account;
-                row.insertCell(5).textContent = transaction.dateAdded;
+                row.insertCell(5).textContent = new Date(transaction.dateAdded).toLocaleDateString('pl-PL');
                 row.insertCell(6).textContent = transaction.comments;
             });
         })
@@ -41,7 +41,7 @@ function searchTransactions() {
                         row.insertCell(2).textContent = transaction.category;
                         row.insertCell(3).textContent = transaction.value;
                         row.insertCell(4).textContent = transaction.account;
-                        row.insertCell(5).textContent = transaction.dateAdded;
+                        row.insertCell(5).textContent = new Date(transaction.dateAdded).toLocaleDateString('pl-PL');
                         row.insertCell(6).textContent = transaction.comments;
                     }
                 });

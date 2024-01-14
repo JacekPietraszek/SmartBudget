@@ -1,13 +1,15 @@
 package com.smartbudget.smartbudget.transaction;
 
 
+import java.util.Date;
+
 public class TransactionDto {
     private Long id;
     private String TypeOfTransaction;
     private String category;
     private Double value;
     private String account;
-    private String dateAdded;
+    private Date dateAdded;
     private String comments;
 
     public String getTypeOfTransaction() {
@@ -50,11 +52,11 @@ public class TransactionDto {
         this.account = account;
     }
 
-    public String getDateAdded() {
+    public Date getDateAdded() {
         return dateAdded;
     }
 
-    public void setDateAdded(String dateAdded) {
+    public void setDateAdded(Date dateAdded) {
         this.dateAdded = dateAdded;
     }
 
