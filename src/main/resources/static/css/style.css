@@ -30,19 +30,29 @@ th, td {
 .container {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
     background-color: #ffffff;
     padding: 15px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
+    margin: 20px auto;
+    width: 50%;
+}
+
+.typeOfTransaction {
+    border: 1px solid #b3b3b3;
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+
 }
 
 
 .btn-primary {
-    background-color: #66b3ff;
-    color: #ffffff;
+    background-color: #99FF33;
+    color: rgba(0, 0, 0, 0.6);
+    font-weight: bold;
     border: none;
     border-radius: 8px;
     padding: 10px 15px;
@@ -51,7 +61,7 @@ th, td {
 }
 
 .btn-primary:hover {
-    background-color: #3385ff;
+    background-color: #7bd51e;
 }
 
 .form-container {
@@ -92,6 +102,8 @@ th, td {
     background-color: #ffffff;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    width: 50%;
 }
 
 .month-navigation button {
@@ -119,10 +131,12 @@ th, td {
     height: 50px;
     cursor: pointer;
     outline: none;
+    transition: background-color 0.3s ease;
 }
 
 .add-transaction-btn:hover {
     background-color: darkgreen;
+    transition: background-color 0.3s ease;
 }
 
 .subtract-transaction-btn {
@@ -138,10 +152,12 @@ th, td {
     height: 50px;
     cursor: pointer;
     outline: none;
+    transition: background-color 0.3s ease;
 }
 
 .subtract-transaction-btn:hover {
     background-color: darkred;
+    transition: background-color 0.3s ease;
 }
 .month-navigation {
     display: flex;

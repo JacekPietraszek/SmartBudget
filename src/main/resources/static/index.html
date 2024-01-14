@@ -28,13 +28,15 @@
         <option value="transport">Transport</option>
         <option value="inne">Inne</option>
     </select>
-    <p>Rodzaj transakcji:</p>
-    <label for="income">Przychód</label>
-    <input type="checkbox" id="income" name="typeOfTransaction" value="income">
-    <label for="expense">Wydatek</label>
-    <input type="checkbox" id="expense" name="typeOfTransaction" value="expense">
+    <div class="typeOfTransaction">
+        <h3>Rodzaj transakcji:</h3>
+        <label for="income">Przychód</label>
+        <input type="checkbox" id="income" name="typeOfTransaction" value="income">
+        <label for="expense">Wydatek</label>
+        <input type="checkbox" id="expense" name="typeOfTransaction" value="expense">
+        <p> </p>
+    </div>
     <button class="btn btn-primary mx-1" onclick="searchTransactions()">Szukaj</button>
-    <p> </p>
 </div>
 <div class="month-navigation">
     <button onclick="previousMonth()">❮</button>
