@@ -13,9 +13,11 @@ public class Transaction {
     @Column
     private Long id;
     @Column(name = "type_of_transaction")
+    // todo typ transakcji to może być enum, transactionType, zmienić nazwę zmiennej
     private String typeOfTransaction;
     @Column
     private String category;
+    //todo value_transaction -> value, nazwa kolumny (jak będziesz to zmieniał to rób bardzo małe zmiany i obserwuj czy sie baza nie wywala)
     @Column(name= "value_transaction")
     private Double value;
     @Column
