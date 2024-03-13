@@ -14,10 +14,13 @@ public class Transaction {
     private Long id;
     @Column(name = "type_of_transaction")
     // todo typ transakcji to może być enum, transactionType, zmienić nazwę zmiennej
+    // String -> własny enum TransactionType
     private String typeOfTransaction;
+    //todo manyToOne? jak już będzie tabelka z kategoriami to tutaj powinno być powiązanie
     @Column
     private String category;
     //todo value_transaction -> value, nazwa kolumny (jak będziesz to zmieniał to rób bardzo małe zmiany i obserwuj czy sie baza nie wywala)
+    // nie przechowujemy pieniędzy jako double https://gist.github.com/kpgalligan/dd5fa2237f271a138f91 -> typ Money, może być @Embeddable
     @Column(name= "value_transaction")
     private Double value;
     @Column
