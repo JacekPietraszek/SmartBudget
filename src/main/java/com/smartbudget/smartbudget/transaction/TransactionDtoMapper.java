@@ -5,19 +5,19 @@ import org.springframework.stereotype.Service;
 @Service
 public class TransactionDtoMapper {
 
-    TransactionDto toDto(Transaction transaction) {
-        TransactionDto dto = new TransactionDto();
-        dto.setId(transaction.getId());
-        dto.setTypeOfTransaction(transaction.getTypeOfTransaction());
-        dto.setCategory(transaction.getCategory());
-        dto.setValue(transaction.getValue());
-        dto.setAccount(transaction.getAccount());
-        dto.setDateAdded(transaction.getDateAdded());
-        dto.setComments(transaction.getComments());
-        return dto;
+    public TransactionDto toDto(Transaction transaction) {
+        return new TransactionDto.Builder()
+                .id(transaction.getId())
+                .typeOfTransaction(transaction.getTypeOfTransaction())
+                .category(transaction.getCategory())
+                .value(transaction.getValue())
+                .account(transaction.getAccount())
+                .dateAdded(transaction.getDateAdded())
+                .comments(transaction.getComments())
+                .build();
     }
 
-    Transaction toEntity(TransactionDto dto) {
+    public Transaction toEntity(TransactionDto dto) {
         Transaction transaction = new Transaction();
         transaction.setId(dto.getId());
         transaction.setAccount(dto.getAccount());
