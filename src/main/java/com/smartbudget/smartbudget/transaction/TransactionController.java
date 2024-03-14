@@ -14,7 +14,7 @@ public class TransactionController {
     public TransactionController(TransactionService transactionService) {
         this.transactionService = transactionService;
     }
-    // todo nazewnictwo endpointów
+
     @PostMapping("/transaction")
     public String addTransaction(@RequestBody TransactionDto transactionDto) {
         TransactionDto savedTransaction = transactionService.saveTransaction(transactionDto);
