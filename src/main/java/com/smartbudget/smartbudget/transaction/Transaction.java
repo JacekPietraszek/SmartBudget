@@ -12,10 +12,8 @@ public class Transaction {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column
     private Long id;
-    @Column(name = "type_of_transaction")
-    // todo typ transakcji to może być enum, transactionType, zmienić nazwę zmiennej
-    // String -> własny enum TransactionType
-    private String typeOfTransaction;
+    @Enumerated(EnumType.STRING)
+    private TransactionType transactionType;
     //todo manyToOne? jak już będzie tabelka z kategoriami to tutaj powinno być powiązanie
     @Column
     private String category;
@@ -39,12 +37,12 @@ public class Transaction {
         this.id = id;
     }
 
-    public String getTypeOfTransaction() {
-        return typeOfTransaction;
+    public TransactionType getTransactionType() {
+        return transactionType;
     }
 
-    public void setTypeOfTransaction(String typeOfTransaction) {
-        this.typeOfTransaction = typeOfTransaction;
+    public void setTransactionType(TransactionType transactionType) {
+        this.transactionType = transactionType;
     }
 
     public String getCategory() {
@@ -85,18 +83,5 @@ public class Transaction {
 
     public void setComments(String comments) {
         this.comments = comments;
-    }
-
-    @Override
-    public String toString() {
-        return "Transaction{" +
-                "id=" + id +
-                ", typeOfTransaction='" + typeOfTransaction + '\'' +
-                ", category='" + category + '\'' +
-                ", value=" + value +
-                ", account='" + account + '\'' +
-                ", dateAdded=" + dateAdded +
-                ", comments='" + comments + '\'' +
-                '}';
     }
 }

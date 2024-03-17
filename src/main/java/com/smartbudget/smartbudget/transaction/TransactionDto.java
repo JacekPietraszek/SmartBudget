@@ -1,20 +1,39 @@
 package com.smartbudget.smartbudget.transaction;
 
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.util.Date;
 
 public class TransactionDto {
     private final Long id;
-    private final String typeOfTransaction;
+    private final TransactionType transactionType;
     private final String category;
     private final Double value;
     private final String account;
     private final Date dateAdded;
     private final String comments;
 
+    @JsonCreator
+    private TransactionDto(@JsonProperty("id") Long id,
+                           @JsonProperty("transactionType") TransactionType transactionType,
+                           @JsonProperty("category") String category,
+                           @JsonProperty("value") Double value,
+                           @JsonProperty("account") String account,
+                           @JsonProperty("dateAdded") Date dateAdded,
+                           @JsonProperty("comments") String comments) {
+        this.id = id;
+        this.transactionType = transactionType;
+        this.category = category;
+        this.value = value;
+        this.account = account;
+        this.dateAdded = dateAdded;
+        this.comments = comments;
+    }
     private TransactionDto(Builder builder) {
         this.id = builder.id;
-        this.typeOfTransaction = builder.typeOfTransaction;
+        this.transactionType = builder.transactionType;
         this.comments = builder.comments;
         this.account = builder.account;
         this.dateAdded = builder.dateAdded;
@@ -22,12 +41,12 @@ public class TransactionDto {
         this.category = builder.category;
     }
 
-    public String getTypeOfTransaction() {
-        return typeOfTransaction;
-    }
-
     public Long getId() {
         return id;
+    }
+
+    public TransactionType getTransactionType() {
+        return transactionType;
     }
 
     public String getCategory() {
@@ -53,7 +72,7 @@ public class TransactionDto {
     public static class Builder {
 
         private Long id;
-        private String typeOfTransaction;
+        private TransactionType transactionType;
         private String category;
         private Double value;
         private String account;
@@ -68,8 +87,8 @@ public class TransactionDto {
             return Builder.this;
         }
 
-        public Builder typeOfTransaction(String typeOfTransaction) {
-            this.typeOfTransaction = typeOfTransaction;
+        public Builder transactionType(TransactionType transactionType) {
+            this.transactionType = transactionType;
             return Builder.this;
         }
 
@@ -99,7 +118,7 @@ public class TransactionDto {
         }
 
         public TransactionDto build() {
-            if (this.typeOfTransaction == null) {
+            if (this.transactionType == null) {
                 throw new NullPointerException("The property \"TypeOfTransaction\" is null. "
                         + "Please set the value by \"TypeOfTransaction()\". "
                         + "The properties \"TypeOfTransaction\", \"category\", \"value\", \"account\", \"dateAdded\" and \"comments\" are required.");
