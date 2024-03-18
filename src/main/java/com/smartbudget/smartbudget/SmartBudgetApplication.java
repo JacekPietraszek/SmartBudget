@@ -3,6 +3,7 @@ package com.smartbudget.smartbudget;
 import com.smartbudget.smartbudget.transaction.TransactionDto;
 import com.smartbudget.smartbudget.transaction.TransactionDtoMapper;
 import com.smartbudget.smartbudget.transaction.TransactionRepository;
+import com.smartbudget.smartbudget.transaction.TransactionType;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
@@ -23,7 +24,7 @@ public class SmartBudgetApplication {
         TransactionRepository transactionRepository = context.getBean(TransactionRepository.class);
         TransactionDtoMapper transactionDtoMapper = context.getBean(TransactionDtoMapper.class);
         TransactionDto newTrans = new TransactionDto.Builder()
-                .typeOfTransaction("expense")
+                .transactionType(TransactionType.EXPENSE)
                 .account("1234 1234 1234 1234")
                 .comments("komentarz")
                 .dateAdded(Date.from(Instant.now()))
