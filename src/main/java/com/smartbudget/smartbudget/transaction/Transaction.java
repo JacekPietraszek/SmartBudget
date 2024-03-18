@@ -13,6 +13,7 @@ public class Transaction {
     @Column
     private Long id;
     @Enumerated(EnumType.STRING)
+    @Column(name="transaction_type")
     private TransactionType transactionType;
     //todo manyToOne? jak już będzie tabelka z kategoriami to tutaj powinno być powiązanie
     @Column
