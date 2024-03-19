@@ -10,7 +10,7 @@ public class TransactionDto {
     private final Long id;
     private final TransactionType transactionType;
     private final String category;
-    private final Double value;
+    private final Money value;
     private final String account;
     private final Date dateAdded;
     private final String comments;
@@ -19,7 +19,7 @@ public class TransactionDto {
     private TransactionDto(@JsonProperty("id") Long id,
                            @JsonProperty("transactionType") TransactionType transactionType,
                            @JsonProperty("category") String category,
-                           @JsonProperty("value") Double value,
+                           @JsonProperty("value") Money value,
                            @JsonProperty("account") String account,
                            @JsonProperty("dateAdded") Date dateAdded,
                            @JsonProperty("comments") String comments) {
@@ -53,7 +53,7 @@ public class TransactionDto {
         return category;
     }
 
-    public Double getValue() {
+    public Money getValue() {
         return value;
     }
 
@@ -74,7 +74,7 @@ public class TransactionDto {
         private Long id;
         private TransactionType transactionType;
         private String category;
-        private Double value;
+        private Money value;
         private String account;
         private Date dateAdded;
         private String comments;
@@ -97,7 +97,7 @@ public class TransactionDto {
             return Builder.this;
         }
 
-        public Builder value(Double value) {
+        public Builder value(Money value) {
             this.value = value;
             return Builder.this;
         }

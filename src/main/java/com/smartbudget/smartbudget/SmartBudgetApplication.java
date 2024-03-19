@@ -1,13 +1,11 @@
 package com.smartbudget.smartbudget;
 
-import com.smartbudget.smartbudget.transaction.TransactionDto;
-import com.smartbudget.smartbudget.transaction.TransactionDtoMapper;
-import com.smartbudget.smartbudget.transaction.TransactionRepository;
-import com.smartbudget.smartbudget.transaction.TransactionType;
+import com.smartbudget.smartbudget.transaction.*;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 
+import java.math.BigDecimal;
 import java.time.Instant;
 import java.util.Date;
 
@@ -28,7 +26,7 @@ public class SmartBudgetApplication {
                 .account("1234 1234 1234 1234")
                 .comments("komentarz")
                 .dateAdded(Date.from(Instant.now()))
-                .value(100d)
+                .value(new Money(BigDecimal.valueOf(50.00)))
                 .category("mieszkanie")
                 .build();
 

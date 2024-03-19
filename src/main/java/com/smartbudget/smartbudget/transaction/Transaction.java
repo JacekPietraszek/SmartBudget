@@ -20,8 +20,8 @@ public class Transaction {
     private String category;
     //todo value_transaction -> value, nazwa kolumny (jak będziesz to zmieniał to rób bardzo małe zmiany i obserwuj czy sie baza nie wywala)
     // nie przechowujemy pieniędzy jako double https://gist.github.com/kpgalligan/dd5fa2237f271a138f91 -> typ Money, może być @Embeddable
-    @Column(name= "value_transaction")
-    private Double value;
+    @Embedded
+    private Money value;
     @Column
     private String account;
     @Column(name = "date_added")
@@ -54,11 +54,11 @@ public class Transaction {
         this.category = category;
     }
 
-    public Double getValue() {
+    public Money getValue() {
         return value;
     }
 
-    public void setValue(Double value) {
+    public void setValue(Money value) {
         this.value = value;
     }
 
