@@ -3,6 +3,7 @@ package com.smartbudget.smartbudget.transaction;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.smartbudget.smartbudget.money.Money;
 
 import java.util.Date;
 

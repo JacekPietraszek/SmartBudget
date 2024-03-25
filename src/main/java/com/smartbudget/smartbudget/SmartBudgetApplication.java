@@ -1,5 +1,6 @@
 package com.smartbudget.smartbudget;
 
+import com.smartbudget.smartbudget.money.Money;
 import com.smartbudget.smartbudget.transaction.*;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

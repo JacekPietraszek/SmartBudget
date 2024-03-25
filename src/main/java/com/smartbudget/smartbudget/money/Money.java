@@ -1,4 +1,4 @@
-package com.smartbudget.smartbudget.transaction;
+package com.smartbudget.smartbudget.money;
 
 import jakarta.persistence.Embeddable;
 

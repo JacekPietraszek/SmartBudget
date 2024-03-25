@@ -1,6 +1,8 @@
 package com.smartbudget.smartbudget.transaction;
 
+import com.smartbudget.smartbudget.money.Money;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Size;
 
 import java.util.Date;
 
@@ -13,7 +15,7 @@ public class Transaction {
     @Column
     private Long id;
     @Enumerated(EnumType.STRING)
-    @Column(name="transaction_type")
+    @Column(name = "transaction_type")
     private TransactionType transactionType;
     //todo manyToOne? jak już będzie tabelka z kategoriami to tutaj powinno być powiązanie
     @Column
@@ -28,6 +30,7 @@ public class Transaction {
     @Temporal(TemporalType.TIMESTAMP)
     private Date dateAdded;
     @Column
+    @Size(min = 0, max = 200, message = "Comments must be between 0 and 200 characters.")
     private String comments;
 
     public Long getId() {
